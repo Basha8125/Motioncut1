@@ -1,0 +1,25 @@
+def run_quiz(questions):
+    score = 0
+    for question, answer in questions.items():
+        print(question)
+        user_answer = input("Your answer: ")
+        if user_answer.lower() == answer.lower():
+            print("Correct!")
+            score += 1
+        else:
+            print("Incorrect. The correct answer is:", answer)
+    
+    print("Quiz complete!")
+    print("Your final score is:", score, "out of", len(questions))
+
+if __name__ == "__main__":
+    quiz_questions = {
+        "What is the capital of France?": "Paris",
+        "Which planet is known as the Red Planet?": "Mars",
+        "What is the powerhouse of the cell?": "Mitochondria",
+        "Who wrote 'Romeo and Juliet'?": "William Shakespeare"
+    }
+    
+    print("Welcome to the Basic Quiz Game!")
+    print("You'll be asked some questions. Let's see how many you can answer correctly.")
+    run_quiz(quiz_questions)
